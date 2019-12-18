@@ -2,37 +2,37 @@
 @section('content')
 	<style>
 		.tab {
-		  overflow: hidden;
-		  border: 1px solid #ccc;
-		  background-color: #f1f1f1;
+			overflow: hidden;
+			border: 1px solid #ccc;
+			background-color: #f1f1f1;
 		}
 
 		.tab button {
-		  background-color: inherit;
-		  float: left;
-		  border: none;
-		  outline: none;
-		  cursor: pointer;
-		  padding: 14px 16px;
-		  transition: 0.3s;
-		  font-size: 17px;
+			background-color: inherit;
+			float: left;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 14px 16px;
+			transition: 0.3s;
+			font-size: 17px;
 		}
 
 		.tab button:hover {
-		  background-color: #ddd;
+			background-color: #ddd;
 		}
 
 		.tab button.active {
-		  background-color: #ccc;
+			background-color: #ccc;
 		}
 
 		.tabcontent {
-		  display: none;
-		  padding: 6px 12px;
-		  border: 1px solid #ccc;
-		  border-top: none;
+			display: none;
+			padding: 6px 12px;
+			border: 1px solid #ccc;
+			border-top: none;
 		}
-		</style>
+	</style>
 	<div class = "right-content" style = "padding: 0">
 			<div class = "filter" style = "float: left">
 				<div class = "box_order_search" class = "col-md-12" style = "float: left; width: 100%;padding:15px 0 !important;justify-content: center;justify-items: center;display: flex;height: 52px;">
@@ -81,14 +81,14 @@
 				
 			</div>	
 		<div class="tab col-12" style=" margin-bottom: 12px;">
-		  <button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'tat_ca')">Tất cả <sup>(0)</sup></button>
-		  <button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'chua_xu_ly')">Chưa xử lý<sup>(0)</sup></button>
-		  <button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'qc_da_nhan')">QC đã nhận<sup>(0)</sup></button>
-		  <button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'da_kiem')">Đã kiểm<sup>(0)</sup></button>
-		  <button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'da_giao')">Đã giao<sup>(0)</sup></button>
-		  <button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'da_nhan')">Đã nhận<sup>(0)</sup></button>
-		  <button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;"class="tablinks" onclick="openTabFilter(event, 'het_hang')">Hết hàng<sup>(0)</sup></button>
-		  <button style="padding: 6px !important;font-size: 15px;" class="tablinks" onclick="openTabFilter(event, 'dang_khieu_nai')">Đang khiếu nại<sup>(0)</sup></button>
+			<button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'tat_ca')">Tất cả <sup>(0)</sup></button>
+			<button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'chua_xu_ly')">Chưa xử lý<sup>(0)</sup></button>
+			<button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'qc_da_nhan')">QC đã nhận<sup>(0)</sup></button>
+			<button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'da_kiem')">Đã kiểm<sup>(0)</sup></button>
+			<button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'da_giao')">Đã giao<sup>(0)</sup></button>
+			<button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;" class="tablinks" onclick="openTabFilter(event, 'da_nhan')">Đã nhận<sup>(0)</sup></button>
+			<button style="padding: 6px !important;font-size: 15px;    margin-right: 30px;"class="tablinks" onclick="openTabFilter(event, 'het_hang')">Hết hàng<sup>(0)</sup></button>
+			<button style="padding: 6px !important;font-size: 15px;" class="tablinks" onclick="openTabFilter(event, 'dang_khieu_nai')">Đang khiếu nại<sup>(0)</sup></button>
 		</div>
 		<div class = "content">
 			<div id="tat_ca" class="tabcontent">

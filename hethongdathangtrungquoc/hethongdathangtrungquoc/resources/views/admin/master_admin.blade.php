@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author">
     <title>QUẢN TRỊ WEBSITE</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	
+
 	<!-- jQuery -->
     <script src="{{asset('css/admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
 
@@ -151,6 +145,18 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+					
+						<li>
+                            <a href=""><i class="fa fa-users fa-fw"></i>Profile<span class="fa arrow"></a>
+							<ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{route('getChangePassword',Auth::user()->id)}}">Đổi mật khẩu</a>
+                                </li>
+								<li>
+                                    <a href="{{route('getProfile',Auth::user()->id)}}">Thông tin cá nhân</a>
+                                </li>
+                            </ul>
+                        </li>
 					
 						<li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>

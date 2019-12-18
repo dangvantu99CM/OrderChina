@@ -3,9 +3,7 @@
 @section('content')
 	
 	<div class = "col-lg-12">
-			<h1 class="header-page">Thay đổi thông tin
-				
-			</h1>
+			<h1 class="header-page">Đơn hàng</h1>
 	</div>
 	<div class="col-lg-7" style="padding-bottom: 120px">
 		<form id = "form_add" action="{!! URL::route('admin.subjectItem.postEdit',[$subjectitem->su_id,$subjectitem->su_it_id]) !!}" method="POST" enctype="multipart/form-data" >

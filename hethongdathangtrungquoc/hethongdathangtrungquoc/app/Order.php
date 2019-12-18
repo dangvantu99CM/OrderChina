@@ -39,12 +39,35 @@ class Order extends Model
 		return $data;
 	}
 	
-	public function findOrderByOrderCode($or_code){
-		$data = DB::table($this->table)->where("or_code",$or_code)->get();
+	public function filterByOrderStatus($or_status){
+		$data = DB::table($this->table)->where("or_status",$or_status)->get();
 		return $data;
 	}
 	
-	
-	
+	public function findOrderBySearch($or_code,$fromDate,$toDate,$selectedCity,$selectedStatus){
+		
+		$query = DB::table($this->table);	
+		if($or_code !== ""){
+			$query->where('or_code','LIKE','%'.$or_code.'%');
+		}
+		if($selectedStatus != 0){
+			$query->where('or_status',$selectedStatus);
+		}
+		if($selectedCity != 0){
+			$query->where('or_store',$selectedCity);
+		}
+		if($fromDate != ""){
+			$query->where('created_at','>=',$fromDate);
+		}
+		if($toDate != ""){
+			$query->where('created_at','<=',$toDate);
+		}
+		$data=$query->get();	
+		// echo "<pre>";
+			// print_r($data);
+		// echo "</pre>";
+		
+		return $data;
+	}
 	
 }

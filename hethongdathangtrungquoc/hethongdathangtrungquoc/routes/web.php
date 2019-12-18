@@ -37,6 +37,7 @@ Route::group(['prefix'=>'admin'],function(){
 	//List orders
 	Route::group(['prefix'=>'orders'],function(){
 		Route::get('/search',['as'=>'admin.order.search','uses'=>'OrderController@getSearch']);
+		Route::get('/order_status',['as'=>'admin.order.filter','uses'=>'OrderController@filterByOrderStatus']);
 		Route::get('/',['as'=>'admin.order.list','uses'=>'OrderController@getList']);
 		Route::get('/shop',['as'=>'admin.order.shop','uses'=>'OrderController@getOrderShop']);
 		Route::get('/tracking_order_list',['as'=>'admin.order.tracking_order_list','uses'=>'OrderController@trackingOrderList']);
@@ -85,6 +86,15 @@ Route::group(['prefix'=>'admin'],function(){
 		// Route::post('search',['as'=>'search','uses'=>'EconomyController@search']);
 	});
 });
+
+// ------------------------------------------- Edit profile --------------------------------------
+
+Route::get('edit/profile/{id}','ProfileController@getProfile')->name('getProfile');
+Route::post('edit/profile/{id}','ProfileController@postProfile')->name('postProfile');
+Route::get('user/change_password/{id}','ProfileController@getChangePassword')->name('getChangePassword');
+Route::post('user/change_password/{id}','ProfileController@postChangePassword')->name('postChangePassword');
+
+
 
 // Route::group(['prefix'=>'admin','middleware' => ['can:admin']],function(){
 	//-------------------------------------------User------------------------------------------

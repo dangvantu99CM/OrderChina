@@ -41,12 +41,17 @@ class OrderController extends Controller
 	
 	
 	public function getSearch(Request $request){
+		
 		$order = new Order();
-		$or_code = $_GET['textSearch'];	
 		$output = '';
-		$result = $order->findOrderByOrderCode($or_code);
-		$countProduct = count(json_decode($result[0]->or_arr_id_products));
-		if ($result) {
+		$or_code = $_GET["textSearch"];	
+		$fromDate = $_GET["begin_day"];	
+		$toDate = $_GET["finish_day"];	
+		$or_store = $_GET["city_select"];	
+		$or_status = $_GET["status_select"];
+		$result = $order->findOrderBySearch($or_code,$fromDate,$toDate,$or_store,$or_status);
+		if(sizeof($result) !== 0){
+			$countProduct = count(json_decode($result[0]->or_arr_id_products));
 			foreach ($result as $key => $order) {
 				$output .= '<tr>
 					<td>' . $order->or_code . '</td>
@@ -57,10 +62,17 @@ class OrderController extends Controller
 					<td>' . $order->created_at . '</td>
 				</tr>';
 			}
+			echo "output =====".$output;
+			return Response($output);
 		}
-        $view = view('admin.Order.list')->render();
-        return response()->json(['html'=>$view]);
-        
+		return "";
+	}
+	
+	public function filterByOrderStatus(Request $request){
+		$order = new Order();
+		$result = $order->findOrderByOrderStatus($request->id);
+		echo $result;
+		return Response($result);
 	}
 		
 	public function getOrderShop(){
